@@ -4,34 +4,30 @@ print("                   ---- Welcome to the Guessing Game!! ----   created by 
 
 
 
-def guess():
+def guess_and_verify(): # function to verify and obtain only int inputs between 0 and 20
     while True:
         try: 
             num = int(input("Digite um NÚMERO entre 0 e 20: "))
             if num>20 or num<0:
                 raise ValueError("Seu número está incorreto!")
-
         except ValueError as e:
             print("Valor inválido:",e)
         else:
             break
-
     return num
 
-guessNumber = guess()
+guessNumber = guess_and_verify()
 c=1
 
 while guessNumber != number:
     if guessNumber < number:
         print("Digite um número maior para acertar ")
-        guessNumber = guess()
-        
+        guessNumber = guess_and_verify()
         c+=1
     
     elif guessNumber > number:
         print("Digite um número menor para acertar ")
-        guessNumber = guess()
-        
+        guessNumber = guess_and_verify()
         c+=1
 
             
