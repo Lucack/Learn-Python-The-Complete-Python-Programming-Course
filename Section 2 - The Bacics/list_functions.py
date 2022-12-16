@@ -28,3 +28,6 @@ print(shoppingList2)
 
     # .count()
 print(shoppingList2.count("brocolli"))
+
+    # sum()
+print( sum(array3) )
