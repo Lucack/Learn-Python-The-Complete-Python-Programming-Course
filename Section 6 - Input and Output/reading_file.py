@@ -2,5 +2,13 @@ f = open(r"C:\Users\Lucas\Desktop\GitHub\Learn-Python-The-Complete-Python-Progra
 print(f.read())
 print(f.read()) # dont read twices
 
-print(f.tell()) # return '90' 
+    # .tell()
+print(f.tell()) # return '90' position cursor
 
+    #  .seek(0,0)   return '0' position cursor
+position = f.seek(0,0)
+print(f.read())
+
+position = f.seek(0,0)
+print(f.read(21))
+print(help(open))
