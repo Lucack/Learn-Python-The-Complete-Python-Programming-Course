@@ -6,4 +6,3 @@ Link: https://www.udemy.com/course/pythonforbeginners/
  * Create their own Python Programs
  * Become an experienced Python Programmer
  * Parse the Web and Create their own Games
-![image](https://user-images.githubusercontent.com/120526082/208221059-f0666d72-0ed5-436d-a349-1804489c40fe.png)
