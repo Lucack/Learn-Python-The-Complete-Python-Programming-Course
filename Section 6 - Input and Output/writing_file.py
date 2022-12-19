@@ -4,6 +4,12 @@ f = open('Testfile.txt','w')
 f.write("I have entered some tet into this file \n lets see if this works")
 f.close()
 
+
+f = open('Testfile.txt','a')
+
+f.write('\n'+(input("Digite algo")))
+
+
 f = open('Testfile.txt','r')
 print(f.read())
 
