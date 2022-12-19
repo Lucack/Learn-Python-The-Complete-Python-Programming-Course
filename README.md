@@ -3,7 +3,7 @@ Learn A-Z everything about Python, from the basics, to advanced topics like Pyth
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/120526082/208517476-e59f9721-62eb-43de-8dbe-39e833842447.png">
+<img height="300" src="https://user-images.githubusercontent.com/120526082/208517476-e59f9721-62eb-43de-8dbe-39e833842447.png">
 
 <p align="center"> Link: https://www.udemy.com/course/pythonforbeginners/</p>
 
