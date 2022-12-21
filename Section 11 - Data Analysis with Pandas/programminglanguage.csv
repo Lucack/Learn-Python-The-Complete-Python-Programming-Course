@@ -1,0 +1,396 @@
+﻿Year,Name,"Chief developer, company",Predecessor(s)
+1804,Jacquard machine,Joseph Marie Jacquard,none (unique language)
+1879,Begriffsschrift,Gottlob Frege,none (unique language)
+1944,ENIAC coding system,"John von Neumann, John Mauchly, J. Presper Eckert, Herman Goldstine after Alan Turing. The first programmers of ENIAC were Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Meltzer, Fran Bilas, and Ruth Lichterman.",none (unique language)
+1948,Plankalkül,Konrad Zuse,none (unique language)
+1948,ARC/Birkbeck Assembler,Kathleen Booth,ENIAC Short Code
+1949,EDSAC Initial Orders,David Wheeler,ENIAC coding system
+1949,Short Code,John Mauchly and William F. Schmitt,ENIAC Short Code
+1950,Short Code,"William F. Schmidt, Albert B. Tonik, J. R. Logan",Brief Code
+1951,Superplan,Heinz Rutishauser,Plankalkül
+1951,ALGAE,Edward A. Voorhees and Karl Balke,none (unique language)
+1951,Intermediate Programming Language,Arthur Burks,Short Code
+1951,Boehm unnamed coding system,Corrado Böhm,CPC Coding scheme
+1951,Klammerausdrücke,Konrad Zuse,Plankalkül
+1951,Stanislaus (Notation),Fritz Bauer,none (unique language)
+1951,Sort Merge Generator,Betty Holberton,none (unique language)
+1952,A-0,Grace Hopper,Short Code
+1952,Glennie Autocode,Alick Glennie after Alan Turing,CPC Coding scheme
+1952,Operator programming,Alexey Andreevich Lyapunov with the participation Kateryna Yushchenko,MESM
+1952,Editing Generator,Milly Koss,SORT/MERGE
+1952,COMPOOL,RAND/SDC,none (unique language)
+1953,Speedcoding,John W. Backus,none (unique language)
+1953,READ/PRINT,"Don Harroff, James Fishman, George Ryckman",none (unique language)
+1954,Laning and Zierler system,"Laning, Zierler, Adams at MIT Project Whirlwind",none (unique language)
+1954,Mark I Autocode,Tony Brooker,Glennie Autocode
+1954,ARITH-MATIC,Team led by Grace Hopper at UNIVAC,A-0
+1954,MATH-MATIC,Team led by Charles Katz,A-0
+1954,MATRIX MATH,H G Kahrimanian,none (unique language)
+1954,IPL I (concept),"Allen Newell, Cliff Shaw, Herbert A. Simon",none (unique language)
+1954,FORTRAN (concept),Team led by John W. Backus at IBM,Speedcoding
+1955,Address programming language (with Pointers),Kateryna Yushchenko,Operator programming - Alexey Andreevich Lyapunov & Kateryna Yushchenko & MESM
+1955,FLOW-MATIC,Team led by Grace Hopper at UNIVAC,A-0
+1955,BACAIC,M. Grems and R. Porter,
+1955,PACT I,SHARE,"FORTRAN, A-2"
+1955,Freiburger Code,University of Freiburg,—
+1955,PRINT,IBM,
+1955,Sequentielle Formelübersetzung,Fritz Bauer and Karl Samelson,Boehm
+1956,IT,Team led by Alan Perlis,Laning and Zierler
+1957,COMTRAN,Bob Bemer,FLOW-MATIC
+1957,GEORGE,Charles Leonard Hamblin,none (unique language)
+1957,FORTRAN I (implementation),John W. Backus at IBM,FORTRAN
+1957,COMIT (concept),Victor Yngve,none (unique language)
+1957,LISP (concept),John McCarthy,IPL
+1957,UNICODE,Remington Rand UNIVAC,MATH-MATIC
+1958,IPL II (implementation),"Allen Newell, Cliff Shaw, Herbert A. Simon",IPL I
+1958,FORTRAN II,Team led by John W. Backus at IBM,FORTRAN I
+1958,ALGOL 58 (IAL),ACM/GAMM,"FORTRAN, IT, Sequentielle Formelübersetzung"
+1958,IPL V,"Allen Newell, Cliff Shaw, Herbert A. Simon",IPL II
+1959,APT,Douglas T. Ross,
+1959,FACT,"Fletcher R. Jones, Roy Nutt, Robert L. Patrick",none (unique language)
+1959,COBOL (concept),The CODASYL Committee,"FLOW-MATIC, COMTRAN, FACT"
+1959,JOVIAL,Jules Schwartz at SDC,ALGOL 58
+1959,LISP (implementation),John McCarthy,IPL
+1959,MAD – Michigan Algorithm Decoder,"Bruce Arden, Bernard Galler, and Robert M. Graham",ALGOL 58
+1959,TRAC (concept),Calvin Mooers,
+1960,ALGOL 60,,ALGOL 58
+1960,COBOL 61 (implementation),The CODASYL Committee,"FLOW-MATIC, COMTRAN"
+1961,COMIT (implementation),Victor Yngve,none (unique language)
+1961,GPSS,"Geoffrey Gordon, IBM",none (unique language)
+1962,FORTRAN IV,IBM,FORTRAN II
+1962,APL (concept),Kenneth E. Iverson,none (unique language)
+1962,Simula (concept),Ole-Johan Dahl (mostly),ALGOL 60
+1962,SNOBOL,"Ralph Griswold, et al.","FORTRAN II, COMIT"
+1963,CPL (concept),"Barron, Christopher Strachey, et al.",ALGOL 60
+1963,SNOBOL3,"Griswold, et al.",SNOBOL
+1963,ALGOL 68 (concept),"Adriaan van Wijngaarden, et al.",ALGOL 60
+1963,JOSS I,"Cliff Shaw, RAND",ALGOL 58
+1964,MIMIC,"H. E. Petersen, et al.",MIDAS
+1964,COWSEL,"Rod Burstall, Robin Popplestone","CPL, LISP"
+1964,PL/I (concept),IBM,"ALGOL 60, COBOL, FORTRAN"
+1964,BASIC,John George Kemeny and Thomas Eugene Kurtz at Dartmouth College,"FORTRAN II, JOSS"
+1964,IBM RPG,IBM,FARGO
+1964,Mark-IV,Informatics,
+1964,Speakeasy-2,Stanley Cohen at Argonne National Laboratory,Speakeasy
+1964,TRAC (implementation),Calvin Mooers,
+1964,P′′,Corrado Böhm,none (unique language)
+1964,IITRAN,,
+1965,RPG II,IBM,"FARGO, RPG"
+1965,MAD/I (concept),University of Michigan,"MAD, ALGOL 60, PL/I"
+1965,TELCOMP,BBN,JOSS
+1965,Atlas Autocode,"Tony Brooker, Derrick Morris at Manchester University","Algol 60, Autocode"
+1966,JOSS II,"Chuck Baker, RAND",JOSS I
+1966,ALGOL W,"Niklaus Wirth, C. A. R. Hoare",ALGOL 60
+1966,FORTRAN 66,John Backus and his team,FORTRAN IV
+1966,ISWIM (Concept),Peter J. Landin,LISP
+1966,CORAL66,I. F. Currie and M. Griffiths,ALGOL 60
+1966,APL (implementation),Kenneth E. Iverson,none (unique language)
+1967,BCPL,Martin Richards,CPL
+1967,MUMPS,Massachusetts General Hospital,"FORTRAN, TELCOMP"
+1967,Simula 67 (implementation),"Ole-Johan Dahl, Bjørn Myhrhaug, Kristen Nygaard at Norsk Regnesentral",ALGOL 60
+1967,InterLisp,D.G. Bobrow and D.L. Murphy,LISP
+1967,EXAPT,"Herwart Opitz, Wilhelm Simon, Günter Spur, and Gottfried Stute at RWTH Aachen University and TU Berlin",APT
+1967,SNOBOL4,"Ralph Griswold, et al.",SNOBOL3
+1967,XPL,"William M. McKeeman, et al. at University of California, Santa Cruz
+J. J. Horning, et al. at Stanford University",PL/I
+1968,ALGOL 68 (UNESCO/IFIP standard),"Adriaan van Wijngaarden, Barry J. Mailloux, John E. L. Peck and Cornelis H. A. Koster, et al.",ALGOL 60
+1968,POP-1,"Rod Burstall, Robin Popplestone",COWSEL
+1968,DIBOL-8,DEC,DIBOL
+1968,Forth (concept),Moore,
+1968,LOGO,"Wally Feurzeig, Seymour Papert, Cynthia Solomon",LISP
+1968,MAPPER,Unisys,CRT RPS
+1968,REFAL (implementation),Valentin Turchin,none (unique language)
+1968,TTM (implementation),"Steven Caine and E. Kent Gordon, California Institute of Technology","GAP, GPM"
+1968,PILOT,"John Amsden Starkweather, University of California, San Francisco",Computest
+1969,PL/I (implementation),IBM,"ALGOL 60, COBOL, FORTRAN"
+1969,B,"Ken Thompson, with contributions from Dennis Ritchie",BCPL
+1969,Polymorphic Programming Language (PPL),Thomas A. Standish at Harvard University,
+1969,SETL,Jack Schwartz at Courant Institute of Mathematical Sciences,ALGOL 60
+1969,TUTOR,Paul Tenczar & University of Illinois at Urbana–Champaign,
+1969,Edinburgh IMP,Edinburgh University,"Algol 60, Autocode, Atlas Autocode"
+1970,Forth (implementation),Charles H. Moore,
+1970,POP-2,Robin Popplestone,POP-1
+1970,SAIL,Dan Swinehart and Bob Sproull,ALGOL-60
+1970,Pascal,"Niklaus Wirth, Kathleen Jensen","ALGOL 60, ALGOL W"
+1970,BLISS,"Wulf, Russell, Habermann at Carnegie Mellon University",ALGOL
+1971,KRL,"Daniel G. Bobrow at Xerox PARC, Terry Winograd at Stanford University","KM, FRL (MIT)"
+1971,Compiler Description Language (CDL),Cornelis H.A. Koster at University of Nijmegen,
+1972,Smalltalk-72,"Alan Kay, Adele Goldberg, Dan Ingalls, Xerox PARC",Simula 67
+1972,PL/M,Gary Kildall at Digital Research,"PL/I, ALGOL, XPL"
+1972,K&R C,Dennis Ritchie,"B, BCPL, ALGOL 68"
+1972,INTERCAL,Don Woods and James M. Lyon,none (unique language)
+1972,Prolog,Alain Colmerauer,2-level W-Grammar
+1972,Structured Query language (SQL),IBM,"ALPHA, Quel (Ingres)"
+1973,COMAL,"Børge Christensen, Benedict Løfstedt","Pascal, BASIC"
+1973,ML,Robin Milner,
+1973,LIS,Jean Ichbiah et al. at CII Honeywell Bull,"Pascal, Sue"
+1973,Speakeasy-3,"Stanley Cohen, Steven Pieper at Argonne National Laboratory",Speakeasy-2
+1974,CLU,Barbara Liskov,"ALGOL 60, Lisp, Simula"
+1974,GRASS,Thomas A. DeFanti,BASIC
+1974,BASIC FOUR,MAI BASIC Four Inc.,Business BASIC
+1974,PROSE modeling language,CDC 6600 Cybernet Services,"SLANG, FORTRAN"
+1975,ABC,Leo Geurts and Lambert Meertens,SETL
+1975,Irvine Dataflow (concept),"Arvind?, University of California, Irvine",
+1975,PROSE modeling language Time-Sharing Version,CDC 6400 Cybernet KRONOS Services,"SLANG, FORTRAN"
+1975,Scheme,"Gerald Jay Sussman, Guy L. Steele, Jr.",LISP
+1975,Altair BASIC,"Bill Gates, Paul Allen",BASIC
+1975,CS-4,"James S. Miller, Benjamin M. Brosgol et al. at Intermetrics","ALGOL 68, BLISS, ECL, HAL"
+1975,Modula,Niklaus Wirth,Pascal
+1975,Irvine Dataflow (implementation),"Arvind and Gostelow, University of California, Irvine",
+1976,Plus,"Allan Ballard, Paul Whaley at the University of British Columbia","Pascal, Sue"
+1976,Smalltalk-76,Xerox PARC,Smalltalk-72
+1976,Mesa,Xerox PARC,ALGOL
+1976,Ratfor,Brian Kernighan,"C, FORTRAN"
+1976,S,John Chambers at Bell Labs,"APL, PPL, Scheme"
+1976,SAS,SAS Institute,
+1976,Integer BASIC,Steve Wozniak,BASIC
+1977,FP,John Backus,none (unique language)
+1977,Bourne Shell (sh),Stephen R. Bourne,none (unique language)
+1977,Commodore BASIC,Jack Tramiel,BASIC
+1977,IDL,David Stern of Research Systems Inc,Fortran
+1977,Standard MUMPS,,MUMPS
+1977,Icon (concept),Ralph Griswold,SNOBOL
+1977,Euclid,"Butler Lampson at Xerox PARC, Ric Holt and James Cordy at University of Toronto",
+1977,Applesoft BASIC,Marc McDonald and Ric Weiland,BASIC
+1978,RAPT,Pat Ambler and Robin Popplestone,APT
+1978,C shell,Bill Joy,C
+1978,RPG III,IBM,"FARGO, RPG, RPG II"
+1978,HAL/S,designed by Intermetrics for NASA,XPL
+1978,Applesoft II BASIC,Marc McDonald and Ric Weiland,Applesoft BASIC
+1978,VisiCalc,"Dan Bricklin, Bob Frankston marketed by VisiCorp",none (unique language)
+1978,MATLAB,Cleve Moler at the University of New Mexico,Fortran
+1978,SMALL,Nevil Brownlee at the University of Auckland,Algol60
+1979,TI BASIC (TI 99/4A),Texas Instruments,BASIC
+1979,Modula-2,Niklaus Wirth,"Modula, Mesa"
+1979,REXX,Mike Cowlishaw at IBM,"PL/I, BASIC, EXEC 2"
+1979,AWK,"Alfred Aho, Peter J. Weinberger, Brian Kernighan","C, SNOBOL"
+1979,Icon (implementation),Ralph Griswold,SNOBOL
+1979,Vulcan dBase-II,Wayne Ratliff,none (unique language)
+1980,Ada 80 (MIL-STD-1815),Jean Ichbiah at CII Honeywell Bull,"ALGOL 68, Green"
+1980,C with classes,Bjarne Stroustrup,"C, Simula 67"
+1980,Applesoft III,Apple Computer,Applesoft II BASIC
+1980,Apple III Microsoft BASIC,Microsoft,Microsoft BASIC
+1980,Smalltalk-80,Adele Goldberg at Xerox PARC,Smalltalk-76
+1980,CBASIC,Gordon Eubanks,"BASIC, Compiler Systems, Digital Research"
+1981,TI Extended BASIC,Texas Instruments,TI BASIC (TI 99/4A)
+1981,BBC BASIC,"Acorn Computers, Sophie Wilson",BASIC
+1981,IBM BASICA,Microsoft,BASIC
+1982,PostScript,Warnock,InterPress
+1982,Turing,"Ric Holt and James Cordy, at University of Toronto",Euclid
+1982,Speakeasy-IV,"Stanley Cohen, et al. at Speakeasy Computing Corporation",Speakeasy-3
+1982,Draco,Chris Gray,"Pascal, C, ALGOL 68"
+1983,GW-BASIC,Microsoft,IBM BASICA
+1983,Turbo Pascal,Hejlsberg at Borland,Pascal
+1983,Ada 83 (ANSI/MIL-STD-1815A),Jean Ichbiah at Alsys,"Ada 80, Green"
+1983,Objective-C,Brad Cox,"Smalltalk, C"
+1983,C++,Bjarne Stroustrup,C with Classes
+1983,True BASIC,"John George Kemeny, Thomas Eugene Kurtz at Dartmouth College",BASIC
+1983,occam,David May,EPL
+1983,KornShell (ksh),David Korn,sh
+1983,Clascal,Apple Computer,Pascal
+1983,ABAP,SAP AG,COBOL
+1984,CLIPPER,Nantucket,dBase
+1984,Common Lisp,"Guy L. Steele, Jr. and many others",LISP
+1984,Coq,INRIA,
+1984,RPL,Hewlett-Packard,"Forth, Lisp"
+1984,Standard ML,,ML
+1984,Redcode,Alexander Dewdney and D.G. Jones,
+1984,OPL,Psion,BASIC
+1985,PARADOX,Borland,dBase
+1985,QuickBASIC,Microsoft,BASIC
+1986,Clarion,Bruce Barrington,
+1986,CorVision,Cortex,INFORM
+1986,Eiffel,Bertrand Meyer,"Simula 67, Ada"
+1986,GFA BASIC,Frank Ostrowski,BASIC
+1986,Informix-4GL,Informix,
+1986,LabVIEW,National Instruments,
+1986,Miranda,David Turner at University of Kent,
+1986,Object Pascal,Apple Computer,Pascal
+1986,PROMAL,,C
+1986,Erlang,Joe Armstrong and others in Ericsson,Prolog
+1987,Ada ISO 8652:1987,ANSI/MIL-STD-1815A unchanged,Ada 83
+1987,Self (concept),Sun Microsystems Inc.,Smalltalk
+1987,occam 2,David May and INMOS,occam
+1987,HyperTalk,Apple Computer,none (unique language)
+1987,Perl,Larry Wall,"C, sed, awk, sh"
+1987,Oberon,Niklaus Wirth,Modula-2
+1987,Mathematica (Wolfram Language),Wolfram Research,none (unique language)
+1987,Turbo Basic,Robert 'Bob' Zale,BASIC/Z
+1987,Clean,Software Technology Research Group of Radboud University Nijmegen,none (unique language)
+1988,Octave,,MATLAB
+1988,Tcl,John Ousterhout,"Awk, Lisp"
+1988,STOS BASIC,François Lionet and Constantin Sotiropoulos,BASIC
+1988,Actor,"Charles Duff, the Whitewater Group","Forth, Smalltalk"
+1988,Object REXX,Simon C. Nash,"REXX, Smalltalk"
+1988,SPARK,Bernard A. Carré,Ada
+1988,A+,Arthur Whitney,"APL, A"
+1988,Hamilton C shell,Nicole Hamilton,C shell
+1988,C90,C90 ISO/IEC 9899:1990,
+1989,Turbo Pascal OOP,Anders Hejlsberg at Borland,"Turbo Pascal, Object Pascal"
+1989,Modula-3,"Cardeli, et al. DEC and Olivetti",Modula-2
+1989,PowerBASIC,Robert 'Bob' Zale,Turbo Basic
+1989,VisSim,"Peter Darnell, Visual Solutions",
+1989,LPC,Lars Pensjö,
+1989,Bash,Brian Fox,"Bourne shell, C shell, KornShell"
+1989,Magik,"Arthur Chance, of Smallworld Systems Ltd",Smalltalk
+1990,Sather,Steve Omohundro,Eiffel
+1990,AMOS BASIC,François Lionet and Constantin Sotiropoulos,STOS BASIC
+1990,AMPL,"Robert Fourer, David Gay and Brian Kernighan at Bell Laboratories",
+1990,Object Oberon,"H Mössenböck, J Templ, R Griesemer",Oberon
+1990,J,"Kenneth E. Iverson, Roger Hui at Iverson Software","APL, FP"
+1990,Haskell,,Miranda
+1990,EuLisp,,"Common Lisp, Scheme"
+1990,Z Shell (zsh),Paul Falstad at Princeton University,ksh
+1990,SKILL,T. J. Barnes at Cadence Design Systems,Franz Lisp
+1991,GNU E,"David J. DeWitt, Michael J. Carey",C++
+1991,HTML,Tim Berners-Lee,
+1991,Oberon-2,"Hanspeter Mössenböck, Wirth",Object Oberon
+1991,Oz,Gert Smolka and his students,Prolog
+1991,Q,Albert Gräf,
+1991,Python,Guido van Rossum,"ABC, C"
+1991,Visual Basic,"Alan Cooper, sold to Microsoft",QuickBASIC
+1992,Borland Pascal,,Turbo Pascal OOP
+1992,Dylan,many people at Apple Computer,"Common Lisp, Scheme"
+1992,S-Lang,John E. Davis,PostScript
+1993,Amiga E,Wouter van Oortmerssen,"DEX, C, Modula-2"
+1993,Brainfuck,Urban Müller,P'′
+1993,LiveCode Transcript,,HyperTalk
+1993,AppleScript,Apple Computer,HyperTalk
+1993,K,Arthur Whitney,"APL, Lisp"
+1993,Lua,"Roberto Ierusalimschy et al. at Tecgraf, PUC-Rio","Scheme, SNOBOL, Modula, CLU, C++"
+1993,R,Robert Gentleman and Ross Ihaka,S
+1993,ZPL,Chamberlain et al. at University of Washington,C
+1993,NewtonScript,Walter Smith,"Self, Dylan"
+1993,Euphoria,Robert Craig,"SNOBOL, AWK, ABC, Icon, Python"
+1993,Self (implementation),Sun Microsystems,Smalltalk
+1994,Claire,Yves Caseau,"Smalltalk, SETL, OPS5, Lisp, ML, C, LORE, LAURE"
+1994,ANSI Common Lisp,,Common Lisp
+1994,RAPID,ABB,ARLA
+1994,Pike,Fredrik Hübinette et al. at Linköping University,"LPC, C, µLPC"
+1994,ANS Forth,"Elizabeth Rather, et al.",Forth
+1995,Ada 95,"S. Tucker Taft, et al. at Intermetrics",Ada 83
+1995,Borland Delphi,Anders Hejlsberg at Borland,Borland Pascal
+1995,ColdFusion (CFML),Allaire,
+1995,Java,James Gosling at Sun Microsystems,"C, Simula 67, C++, Smalltalk, Ada 83, Objective-C, Mesa"
+1995,LiveScript,Brendan Eich at Netscape,"Self, C, Scheme"
+1995,Mercury,Zoltan Somogyi at University of Melbourne,"Prolog, Hope, Haskell"
+1995,PHP,Rasmus Lerdorf,Perl
+1995,Ruby,Yukihiro Matsumoto,"Smalltalk, Perl"
+1995,JavaScript,Brendan Eich at Netscape,LiveScript
+1995,Racket,Matthew Flatt at Rice University,"Scheme, Lisp"
+1996,CSS,Håkon Wium Lie and Bert Bos,SGML
+1996,Curl,"David Kranz, Steve Ward, Chris Terman at MIT","Lisp, C++, Tcl/Tk, TeX, HTML"
+1996,Lasso,Blue World Communications,
+1996,Perl Data Language (PDL),"Karl Glazebrook, Jarle Brinchmann, Tuomas Lukka, and Christian Soeller","APL, Perl"
+1996,VBScript,Microsoft,Visual Basic
+1996,OCaml,INRIA,"Caml Light, Standard ML"
+1996,NetRexx,Mike Cowlishaw,REXX
+1997,Component Pascal,Oberon Microsystems,Oberon-2
+1997,E,Mark S. Miller,"Joule, Original-E"
+1997,Pico,Free University of Brussels,Scheme
+1997,Squeak,"Alan Kay, et al. at Apple Computer","Smalltalk-80, Self"
+1997,ECMAScript,ECMA TC39-TG1,JavaScript
+1997,F-Script,Philippe Mougin,"Smalltalk, APL, Objective-C"
+1997,ISLISP,ISO Standard ISLISP,Common Lisp
+1997,Tea,Jorge Nunes,"Java, Scheme, Tcl"
+1997,REBOL,"Carl Sassenrath, Rebol Technologies","Self, Forth, Lisp, Logo"
+1998,Logtalk,Paulo Moura (then at University of Coimbra),Prolog
+1998,ActionScript,Gary Grossman,ECMAScript
+1998,Standard C++,ANSI/ISO Standard C++,"C++, Standard C, C"
+1998,M2001,"Ronald E. Prather, Trinity University (Texas)",none (unique language)
+1998,PureBasic,"Frederic Laboureur, Fantaisie Software",
+1998,UnrealScript,Tim Sweeney at Epic Games,"C++, Java"
+1998,XSLT (+ XPath),"W3C, James Clark",DSSSL
+1998,Xojo (REALbasic at the time),"Xojo, Andrew Barry",Visual Basic
+1999,C99,C99 ISO/IEC 9899:1999,C90
+1999,Gambas,Benoît Minisini,"Visual Basic, Java"
+1999,Game Maker Language (GML),Mark Overmars,Game Maker
+1999,Harbour,Antonio Linares,"dBase, Clipper"
+2000,Join Java,G Stewart von Itzstein,Java
+2000,DarkBasic,The Game Creators,
+2000,C#,"Anders Hejlsberg, Microsoft (ECMA)","C, C++, Java, Delphi, Modula-2"
+2001,Joy,Manfred von Thun,"FP, Forth"
+2001,AspectJ,"Gregor Kiczales, Xerox PARC","Java, Common Lisp"
+2001,D,"Walter Bright, Digital Mars","C, C++, C#, Java"
+2001,Processing,Casey Reas and Benjamin Fry,"Java, C, C++"
+2001,Visual Basic .NET,Microsoft,Visual Basic
+2001,GDScript (GDS),"Juan Linietsky, Ariel Manzur (OKAM Studio)",Godot
+2001,Shakespeare Programming Language,Jon Åslund and Karl Hasselström.,
+2002,Io,Steve Dekorte,"Self, NewtonScript, Lua"
+2002,Gosu,Guidewire Software,GScript
+2002,Scratch,"Mitchel Resnick, John Maloney, Natalie Rusk, Evelyn Eastmond, Tammy Stern, Amon Millner, Jay Silver, and Brian Silverman","Logo, Smalltalk, Squeak, E-Toys, HyperCard, AgentSheets, StarLogo, Tweak"
+2003,Nemerle,University of Wrocław,"C#, ML, MetaHaskell"
+2003,Factor,Slava Pestov,"Joy, Forth, Lisp"
+2003,Scala,Martin Odersky,"Smalltalk, Java, Haskell, Standard ML, OCaml"
+2003,C++03,C++ ISO/IEC 14882:2003,"C++, Standard C, C"
+2003,Squirrel,Alberto Demichelis,Lua
+2003,Boo,Rodrigo B. de Oliveira,"Python, C#"
+2004,Subtext,Jonathan Edwards,none (unique language)
+2004,Alma-0,"Krzysztof Apt, Centrum Wiskunde & Informatica",none (unique language)
+2004,FreeBASIC,Andre Victor,QBasic
+2004,Groovy,James Strachan,Java
+2004,Little b,"Aneil Mallavarapu, Harvard Medical School, Department of Systems Biology",Lisp
+2005,Fantom,"Brian Frank, Andy Frank","C#, Scala, Ruby, Erlang"
+2005,F#,"Don Syme, Microsoft Research","OCaml, C#, Haskell"
+2005,Haxe,Nicolas Cannasse,"ActionScript, OCaml, Java"
+2005,Oxygene,RemObjects Software,"Object Pascal, C#"
+2005,PWCT,Mahmoud Samir Fayed,none (unique language)
+2005,Seed7,Thomas Mertes,none (unique language)
+2006,Cobra,Chuck Esterbrook,"Python, C#, Eiffel, Objective-C"
+2006,Windows PowerShell,Microsoft,"C#, ksh, Perl, CL, DCL, SQL"
+2006,OptimJ,Ateji,Java
+2006,Fortress,Guy Steele,"Scala, ML, Haskell"
+2006,Vala,GNOME,C#
+2007,Ada 2005,Ada Rapporteur Group,Ada 95
+2007,Agda,Ulf Norell,"Coq, Epigram, Haskell"
+2007,QB64,"Galleon, QB64Team",QBasic
+2007,Clojure,Rich Hickey,"Lisp, ML, Haskell, Erlang"
+2007,LOLCODE,Adam Lindsay,none (unique language)
+2007,Oberon-07,Wirth,Oberon
+2007,Swift (parallel scripting language),"University of Chicago, Argonne National Laboratory",
+2008,Nim,Andreas Rumpf,"Python, Lisp, Object Pascal"
+2008,Genie,Jamie McCracken,"Python, Boo, D, Object Pascal"
+2008,Pure,Albert Gräf,Q
+2009,Chapel,"Brad Chamberlain, Cray Inc.","HPF, ZPL"
+2009,Go,Google,"C, Oberon, Limbo, Smalltalk"
+2009,CoffeeScript,Jeremy Ashkenas,"JavaScript, Ruby, Python, Haskell"
+2009,Idris,Edwin Brady,"Haskell, Agda, Coq"
+2009,Parasail,"S. Tucker Taft, AdaCore","Modula, Ada, Pascal, ML"
+2009,Whiley,David J. Pearce,"Java, C, Python"
+2009,Dafny,K. Rustan M. Leino,"Java, Spec#"
+2010,Rust,"Graydon Hoare, Mozilla","Alef, C++, Camlp4, Erlang, Hermes, Limbo, Napier, Napier88, Newsqueak, NIL, Sather, Standard ML"
+2011,C11,C11 ISO/IEC 9899:2011,C99
+2011,Ceylon,"Gavin King, Red Hat",Java
+2011,Dart,Google,"Java, JavaScript, CoffeeScript, Go"
+2011,C++11,C++ ISO/IEC 14882:2011,"C++, Standard C, C"
+2011,Kotlin,JetBrains,"Java, Scala, Groovy, C#, Gosu"
+2011,Red,Nenad Rakočević,"Rebol, Scala, Lua"
+2011,Opa,MLstate,"OCaml, Erlang, JavaScript"
+2012,Elixir,José Valim,"Erlang, Ruby, Clojure"
+2012,Elm,Evan Czaplicki,"Haskell, Standard ML, OCaml, F#"
+2012,TypeScript,"Anders Hejlsberg, Microsoft","JavaScript, CoffeeScript"
+2012,Julia,"Jeff Bezanson, Stefan Karpinski, Viral Shah, Alan Edelman, MIT","MATLAB, Lisp, C, Fortran, Mathematica (strictly its Wolfram Language), Python, Perl, R, Ruby, Lua"
+2012,P,"Vivek Gupta, Ethan Jackson, Shaz Qadeer, Sriram Rajamani, Microsoft",
+2012,Ada 2012,ARA and Ada Europe (ISO/IEC 8652:2012),"Ada 2005, ISO/IEC 8652:1995/Amd 1:2007"
+2013,P4,P4 Language Consortium (P4.org),
+2013,PureScript,Phil Freeman,Haskell
+2013,Hopscotch,Hopscotch Technologies,Scratch
+2013,Cuneiform,Jörgen Brandt,Swift (parallel scripting language)
+2013,Lean,Microsoft Research,"ML (programming language), Coq, Haskell, Agda (programming language)"
+2014,Crystal,"Ary Borenszweig, Manas Technology Solutions","Ruby, C, Rust, Go, C#, Python"
+2014,Hack,Facebook,PHP
+2014,Swift,Apple Inc.,"Objective-C, Rust, Haskell, Ruby, Python, C#, CLU"
+2014,C++14,C++ ISO/IEC 14882:2014,"C++, Standard C, C"
+2015,Raku,"Larry Wall, The Rakudo Team","Perl, Haskell, Python, Ruby"
+2015,Zig,Andrew Kelley,"C, C++, LLVM IR, Go, Rust"
+2016,Reason,Jordan Walke,"JavaScript, OCaml"
+2016,Ring,Mahmoud Samir Fayed,"Lua, Python, Ruby, C, C#, BASIC, QML, xBase, Supernova"
+2017,C++17,C++ ISO/IEC 14882:2017,"C++, Standard C, C"
+2017,Ballerina,"WSO2, Open Source","Java, Javascript, Go, Rust, C#"
+2017,Q#,Microsoft,"C#, F#, Python"
+2018,C17,ISO/IEC 9899:2018,C11
+2018,Fortran 2018,ISO/IEC JTC1/SC22/WG5 N2150:2018,Fortran 2008
+2019,Bosque,"Mark Marron, Microsoft","JavaScript, TypeScript, ML"
+2020,C++20,C++ ISO/IEC 14882:2020,"C++, Standard C, C"
+2021,Microsoft Power Fx,"Vijay Mital, Robin Abraham, Shon Katzenberger, Darryl Rubin, Microsoft",Excel formulas
+2022,Carbon,Google,"C++, Rust"
