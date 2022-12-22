@@ -26,7 +26,7 @@ def game(event):
             self.id = canvas.create_oval(10,10,25,25,fill=color)
             self.canvas.move(self.id,245,100)
                 #bounce back:
-            start = [-3,-2,-1,0,1,2,3]
+            start = [-3,-2,1,-1,2,3]
             random.shuffle(start)
             self.x = start[0]
             self.y = -3
@@ -94,7 +94,7 @@ def game(event):
             self.x = 2
         
     paddle = Paddles(canvas,"Cyan")
-    ball = Ball(canvas,paddle,'Red')
+    ball = Ball(canvas,paddle,'Black')
 
     
     while True:
