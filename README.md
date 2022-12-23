@@ -65,27 +65,27 @@ This course covered all the fundamentals and several advanced concepts of Python
 
 * Bar Graph with MatPlotLib and Numpy
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib with Numpy\bar.graph.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib with Numpy\bar.graph.png">
 
 * Pie Chart with MatPlotLib and Numpy
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\Pie Chart\modfying pie chart.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\Pie Chart\modfying pie chart.png">
 
 * 3D Graphics with MatPlotLib
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\Ajusts in 3d bar graph.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\Ajusts in 3d bar graph.png">
 
 * First 3D Graph with MatPlotLib
 
-<p align="center"><img height="270" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\labels sxis.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\labels sxis.png">
 
 * Wireframe Graph
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\wireframe graph.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\wireframe graph.png">
 
 * Multiple charts
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\multiple charts 3d.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\multiple charts 3d.png">
 
 
 
