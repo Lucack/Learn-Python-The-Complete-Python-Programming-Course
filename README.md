@@ -44,23 +44,23 @@ This course covered all the fundamentals and several advanced concepts of Python
 
 * Wheater with BeautifulSoup Module (Portguês - PTBR)
 
-<p align="center"><img height="100" src="Section 9 - Beautiful Soup HTML Parsing\weather with soup.png">
+<p align="center"><img  src="Section 9 - Beautiful Soup HTML Parsing\weather with soup.png">
 
 * Wheater with BeautifulSoup Module (English - EN)
 
-<p align="center"><img height="97" src="Section 9 - Beautiful Soup HTML Parsing\weather with soupEN.png">
+<p align="center"><img  src="Section 9 - Beautiful Soup HTML Parsing\weather with soupEN.png">
 
 * Fisrt Graph with MatPlotLib
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\first_graph_1.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\first_graph_1.png">
 
 * Multiple plots with MatPlotLib
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\multiple plots.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\multiple plots.png">
 
 * 3 Graphs 
 
-<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\3graphs.png">
+<p align="center"><img  src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\3graphs.png">
 
 
 * Bar Graph with MatPlotLib and Numpy
