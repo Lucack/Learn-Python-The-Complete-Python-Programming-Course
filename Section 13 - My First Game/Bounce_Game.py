@@ -1,6 +1,8 @@
 from tkinter import *
 import random
 import time
+from playsound import playsound
+
 
 def game(event):
 
@@ -41,6 +43,7 @@ def game(event):
             if pos[2] >= paddle_pos[0] and pos[0] <= paddle_pos[2]:
                 if pos[3] >= paddle_pos[1] and pos[3] <= paddle_pos[3]:
                     points = points+1
+                    # hitSound()
                     return True
                 return False
 
@@ -59,6 +62,7 @@ def game(event):
                 recordText= 'Your Record: ' + str(max(record))
                 canvas.create_text(245,150, text = score, font = ("Comic Sans MS",20) , fill = 'Black') 
                 canvas.create_text(245,490, text = recordText, font = ("Comic Sans MS",10) , fill = 'Black') 
+            pos = self.canvas.coords(self.id)
             if pos[0] <= 0:
                 self.x = 3
             if pos[2] >= 500:
@@ -173,7 +177,12 @@ def backMenu(event):
     global menuevent
     menuevent = True
     menu(event)
-    
+
+def hitSound():
+    local = 'Jump_sound.wav'
+    playsound(local, False)
+
+
 menuevent = False
 restart =  False
 strt = 0
