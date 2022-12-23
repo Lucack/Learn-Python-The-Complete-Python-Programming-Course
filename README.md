@@ -30,3 +30,99 @@ This course covered all the fundamentals and several advanced concepts of Python
 * GUI and Gaming with Tkinter
 
 * And much more!
+
+# 
+# Certificate
+
+<p align="center"> <img src="Learning Python.jpg">
+
+# 
+# Image of codes developed in the course
+* Simple car with Turtle mModule
+
+<p align="center"><img height="250" src="Section 7 - Python Modules\Turtle Module\simple car.png">
+
+* Wheater with BeautifulSoup Module (Portguês - PTBR)
+
+<p align="center"><img height="100" src="Section 9 - Beautiful Soup HTML Parsing\weather with soup.png">
+
+* Wheater with BeautifulSoup Module (English - EN)
+
+<p align="center"><img height="97" src="Section 9 - Beautiful Soup HTML Parsing\weather with soupEN.png">
+
+* Fisrt Graph with MatPlotLib
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\first_graph_1.png">
+
+* Multiple plots with MatPlotLib
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\multiple plots.png">
+
+* 3 Graphs 
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib\3graphs.png">
+
+
+* Bar Graph with MatPlotLib and Numpy
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\MathPlotLib with Numpy\bar.graph.png">
+
+* Pie Chart with MatPlotLib and Numpy
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\Pie Chart\modfying pie chart.png">
+
+* 3D Graphics with MatPlotLib
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\Ajusts in 3d bar graph.png">
+
+* First 3D Graph with MatPlotLib
+
+<p align="center"><img height="270" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\labels sxis.png">
+
+* Wireframe Graph
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\wireframe graph.png">
+
+* Multiple charts
+
+<p align="center"><img height="290" src="Section 10 - MatPlotLib and 3D Figures\3D Graphics\multiple charts 3d.png">
+
+
+
+* Data analysis with Pandas
+
+<p align="center"><img src="Section 11 - Data Analysis with Pandas\prog data analysis.png">
+
+
+* Tkinter introduction
+
+<p align="center"><img  src="Section 12 - Python GUI with Tkinter\buttons.png">
+
+
+
+* Simple login with Tkinter
+
+<p align="center"><img src="Section 12 - Python GUI with Tkinter\simple login.png">
+
+
+* Simple calculator with Tkinter
+
+<p align="center"><img src="Section 12 - Python GUI with Tkinter\Calculator\simple calculator.png">
+
+
+* Canvas introduction
+
+<p align="center"><img src="Section 12 - Python GUI with Tkinter\Canvas\canvas intro.png">
+
+
+* My first game: Bounce Game
+<p align="center"><img src="Section 13 - My First Game\bounce intro.png">
+<p align="center"><img src="Section 13 - My First Game\bounce game.png">
+<p align="center"><img src="Section 13 - My First Game\bounce over.png">
+
+* Second game: Pong Game (2 Players)
+
+<p align="center"><img src="Section 14 - My Second Game\Pong game.png">
+
+
+
