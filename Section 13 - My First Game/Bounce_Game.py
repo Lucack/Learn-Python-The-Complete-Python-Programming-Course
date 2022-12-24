@@ -3,91 +3,79 @@ import random
 import time
 from playsound import playsound
 
+class Ball:
 
-def game(event):
-
-    global tk
-    global canvas
-    global count
-    global record
-    global startGame
-    global restartGame
-    global toMenu
-    global points
-    global restart
-    global menuevent
-    global en
-    global pt
-    global languageButton     
-    
-    canvas.delete("all")
-    startGame.destroy()
-    languageButton.destroy()
-    # canvas = Canvas(tk,width=500,height=500, bd=0 , highlightbackground='white')
-    # canvas.pack()
-    points = 0
-
-    class Ball:
-
-        def __init__(self,canvas,paddle,color):
-            self.canvas=canvas
+    def __init__(self,canvas,paddle,color):
+        self.canvas=canvas
+        global colors
+        if choiceBall == True:
+            self.id = canvas.create_oval(10,10,25,25,fill=colors[b])
+        else:
             self.id = canvas.create_oval(10,10,25,25,fill=color)
-            self.canvas.move(self.id,245,100)
-                #bounce back:
-            start = [-3,-2,1,-1,2,3]
-            random.shuffle(start)
-            self.x = start[0]
-            self.y = -3
-            self.canvas_height = 500
-            self.canvas_width = 500
-            self.paddle = paddle
-            self.hit_bottom = False
+        self.canvas.move(self.id,245,100)
+            #bounce back:
+        start = [-3,-2,1,-1,2,3]
+        random.shuffle(start)
+        self.x = start[0]
+        self.y = -3
+        self.canvas_height = 500
+        self.canvas_width = 500
+        self.paddle = paddle
+        self.hit_bottom = False
 
-        def hit_paddle(self, pos):
-            global points
-            paddle_pos = self.canvas.coords(self.paddle.id)
-            if pos[2] >= paddle_pos[0] and pos[0] <= paddle_pos[2]:
-                if pos[3] >= paddle_pos[1] and pos[3] <= paddle_pos[3]:
+    def hit_paddle(self, pos):
+        global points
+            
+        paddle_pos = self.canvas.coords(self.paddle.id)
+        if pos[2] >= paddle_pos[0] and pos[0] <= paddle_pos[2]:
+            if pos[3] >= paddle_pos[1] and pos[3] <= paddle_pos[3]:
+                if inperso == False:                        
                     points = points+1
-                    # hitSound()
-                    return True
-                return False
+                # hitSound()
+                return True
+            return False
 
-        def draw(self):
-            global points
-            global record
-            self.canvas.move(self.id,self.x,self.y)
-            pos = self.canvas.coords(self.id)
-            if pos[1] <= 0:
-                self.y = 3
-            if pos[3] >= 500:
+    def draw(self):
+        global points
+        global record
+        self.canvas.move(self.id,self.x,self.y)
+        pos = self.canvas.coords(self.id)
+        if pos[1] <= 0:
+            self.y = 3
+        if pos[3] >= 500:
+            if inperso == True:
+                self.y = -3
+            else:
                 self.hit_bottom = True
                 if en == True:
-                    canvas.create_text(245,100,text="Game Over!",font=("Comic Sans MS",30), fill ='Black')
+                    canvas.create_text(250,100,text="Game Over!",font=("Comic Sans MS",30), fill ='Black')
                     score = 'Your Score: ' + str(points)
                     record.append(points)
                     recordText= 'Your Record: ' + str(max(record))
                 else:
-                    canvas.create_text(245,100,text="Você Perdeu!",font=("Comic Sans MS",30), fill ='Black')
+                    canvas.create_text(250,100,text="Você Perdeu!",font=("Comic Sans MS",30), fill ='Black')
                     score = 'Sua Pontuação: ' + str(points)
                     record.append(points)
                     recordText= 'Seu Recorde: ' + str(max(record))
-                
-                canvas.create_text(245,150, text = score, font = ("Comic Sans MS",20) , fill = 'Black') 
-                canvas.create_text(245,490, text = recordText, font = ("Comic Sans MS",10) , fill = 'Black') 
-            pos = self.canvas.coords(self.id)
-            if pos[0] <= 0:
-                self.x = 3
-            if pos[2] >= 500:
-                self.x = -3
-            if self.hit_paddle(pos)==True:
-                self.y = -3
-    
-    class Paddles:
+            
+                canvas.create_text(250,150, text = score, font = ("Comic Sans MS",20) , fill = 'Black') 
+                canvas.create_text(250,490, text = recordText, font = ("Comic Sans MS",10) , fill = 'Black') 
+        pos = self.canvas.coords(self.id)
+        if pos[0] <= 0:
+            self.x = 3
+        if pos[2] >= 500:
+            self.x = -3
+        if self.hit_paddle(pos)==True:
+            self.y = -3
+
+class Paddles:
 
         def __init__(self,canvas,color):
             self.canvas = canvas
-            self.id = canvas.create_rectangle(0,0,100,10,fill=color)
+            if choicePaddle == True:
+                self.id = canvas.create_rectangle(0,0,100,10,fill=colors[p])
+            else:
+                self.id = canvas.create_rectangle(0,0,100,10,fill=color)
             self.canvas.move(self.id, 200, 350)
             self.x = 0
             self.canvas_width = 500
@@ -108,13 +96,46 @@ def game(event):
             self.x = -2
 
         def turn_Right(self,evt):
-            self.x = 2
+            self.x = 2   
+
+class Language:
+        def __init__(self):
+            pass
+        def selectPortugues(event):
+            global pt
+            pt = True          
+        def selectEnglish(event):
+            global en
+            en = True
+
+def game(event):
+    global count
+    global restartGame
+    global toMenu
+    global points
+    global restart
+    global menuevent
+    global ball
+    global paddle
+    
+
+    canvas.delete("all")
+    startGame.destroy()
+    languageButton.destroy()
+    persoButton.destroy()
+    # canvas = Canvas(tk,width=500,height=500, bd=0 , highlightbackground='white')
+    # canvas.pack()
+    points = 0
+
+    
 
 
-
-
+    # colorp
+    # colorb
+    
     paddle = Paddles(canvas,"Cyan")
     ball = Ball(canvas,paddle,'Black')
+    
 
     
     while True:
@@ -154,42 +175,40 @@ def game(event):
 
 def menu(event):
 
-    global tk
-    global canvas
-    global count
     global record
     global startGame
     global restartGame
     global toMenu
     global points
-    global restart
-    global menuevent
-    global en
-    global pt
+    global count
     global languageButton
-    global persoTitle
+    global persoButton
+    global perso
 
-    
+    if perso == True:
+        canvas.delete("all")
+        for i in objpersoFunction:
+            i.destroy()
+        perso = False
+
 
     if count > 0:
         canvas.delete("all")
-        toMenu.destroy()      
-    if en == True:        
-        canvas.create_text(245,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black') 
-    else:    
-        canvas.create_text(245,130,text="Bem vindo ao Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
+        toMenu.destroy()
     
     canvas.pack()  
-    time.sleep(1)
+    time.sleep(0.01)
     
     record = []     
     if menuevent == True or count > 0:
         count=0
         restartGame.destroy()
         if en == True: 
+            canvas.create_text(250,100,text="Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
             restartGame = Button(None , text="Restart Game",fg="Black")
             restartGame.place(x=210,y=260)
         else:
+            canvas.create_text(250,130,text="Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
             restartGame = Button(None , text="Reiniciar o Jogo",fg="Black")
             restartGame.place(x=202,y=260)
         
@@ -197,9 +216,10 @@ def menu(event):
         
     else:
         if en == True:
-            
+            canvas.create_text(250,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
             startGame = Button(None , text="Start Game",fg="Black",  width=10, height=1)
         else:
+            canvas.create_text(250,130,text="Bem vindo ao Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
             startGame = Button(None , text="Iniciar o Jogo",fg="Black",  width=10, height=1)
         # startGame.pack(side=BOTTOM)
         startGame.place(x=208,y=250)
@@ -208,14 +228,14 @@ def menu(event):
     if en == True:
         languageButton = Button(None , text="Change Language",fg="Black")
         languageButton.place(x=194,y=290)
-    #     persoButton = Button(None , text=" Personalize ",fg="Black",  width=10, height=1)
-    #     persoButton.place(x=208,y=330)
+        persoButton = Button(None , text=" Personalize ",fg="Black",  width=10, height=1)
+        persoButton.place(x=208,y=330)
     else:
         languageButton = Button(None , text=" Trocar Idioma ",fg="Black")
         languageButton.place(x=202,y=290)
-        # persoButton = Button(None , text="Personalizar",fg="Black",  width=10, height=1)
-        # persoButton.place(x=207,y=330)
-    # persoButton.bind("<Button-1>", persoFunction)
+        persoButton = Button(None , text="Personalizar",fg="Black",  width=10, height=1)
+        persoButton.place(x=207,y=330)
+    persoButton.bind("<Button-1>", persoFunction)
     languageButton.bind("<Button-1>", changeLanguage)
 
     tk.mainloop()
@@ -229,7 +249,6 @@ def restartFunction(event):
 
 def backMenu(event):
     global menuevent
-    global restartGame
     menuevent = True
     menu(event)
 
@@ -259,11 +278,11 @@ def intro():
     tk.wm_attributes("-topmost",1) # in front of all the window
     canvas = Canvas(tk,width=500,height=500, bd=0 , highlightbackground='white')
     canvas.pack()
-    canvas.create_text(245,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black') 
-    canvas.create_text(245,130,text="Bem vindo ao Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
+    canvas.create_text(250,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black') 
+    canvas.create_text(250,130,text="Bem vindo ao Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
 
-    canvas.create_text(245,280,text="Select Language:",font=("Comic Sans MS",10), fill ='Black')
-    canvas.create_text(245,295,text="Selecione o Idioma:",font=("Comic Sans MS",10), fill ='Black')
+    canvas.create_text(250,280,text="Select Language:",font=("Comic Sans MS",10), fill ='Black')
+    canvas.create_text(250,295,text="Selecione o Idioma:",font=("Comic Sans MS",10), fill ='Black')
     
     buttonPtbr = Button(None , text="Português-BR",fg="Black")
     buttonPtbr.place(x=150,y=320)
@@ -283,43 +302,29 @@ def intro():
         tk.update()            
         time.sleep(0.01)
 
-class Language:
-        def __init__(self):
-            pass
-        def selectPortugues(event):
-            global pt
-            pt = True          
-        def selectEnglish(event):
-            global en
-            en = True
-
 def changeLanguage(event):
 
-    global tk
-    global canvas
-    global count
-    global record
-    global startGame
-    global restartGame
-    global toMenu
-    global points
-    global restart
-    global menuevent
     global en
     global pt
     global languageButton 
 
     canvas.delete("all")
+
     startGame.destroy()
     languageButton.destroy()
+    persoButton.destroy()
+
     if menuevent==True:
         restartGame.destroy()
-
+    if en == True:
+        canvas.create_text(250,100,text="Reselect the Language:",font=("Comic Sans MS",20), fill ='Black')
+    if pt == True:
+        canvas.create_text(250,100,text="Selecione Novamente o Idioma:",font=("Comic Sans MS",20), fill ='Black')
     en = False
     pt = False
 
-    canvas.create_text(245,280,text="Select Language:",font=("Comic Sans MS",10), fill ='Black')
-    canvas.create_text(245,295,text="Selecione o Idioma:",font=("Comic Sans MS",10), fill ='Black')
+    canvas.create_text(250,280,text="Select Language:",font=("Comic Sans MS",10), fill ='Black')
+    canvas.create_text(250,295,text="Selecione o Idioma:",font=("Comic Sans MS",10), fill ='Black')
     
     buttonPtbr = Button(None , text="Português-BR",fg="Black")
     buttonPtbr.place(x=150,y=320)
@@ -338,64 +343,358 @@ def changeLanguage(event):
         tk.update()            
         time.sleep(0.01)
 
-# def persoFunction(event):
+def persoFunction(event):
 
-#     global tk
-#     global canvas
-#     global count
-#     global record
-#     global startGame
-#     global restartGame
-#     global toMenu
-#     global points
-#     global restart
-#     global menuevent
-#     global en
-#     global pt
-#     global languageButton
-#     global persoTitle 
+    global persoTitle
+    global ballButton
+    global paddleButton
+    global backButton
+    global perso
+    global inperso
+    global objpersoFunction
 
-#     canvas.delete("all")
-#     startGame.destroy()
-#     languageButton.destroy()
+    canvas.delete("all")
+    startGame.destroy()
+    persoButton.destroy()
+    languageButton.destroy()
+    perso = True
+    inperso = False
 
-#     if menuevent==True:
-#         restartGame.destroy()
+    if menuevent==True:
+        restartGame.destroy()
 
-#     if en == True:
-#         persoTitle = canvas.create_text(245,100,text="Personalize",font=("Comic Sans MS",20), fill ='Black')
+    if en == True:
+        persoTitle = canvas.create_text(250,100,text="Personalize",font=("Comic Sans MS",20), fill ='Black')
 
-#         ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1)
-#         ballButton.place(x=207,y=250)
+        ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1)
+        ballButton.place(x=207,y=250)
 
-#         paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1)
-#         paddleButton.place(x=207,y=290)
+        paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1)
+        paddleButton.place(x=207,y=290)
 
-#         backButton = Button(None , text="Back",fg="Black",  width=10, height=1)
-#         backButton.place(x=207,y=330)
+        backButton = Button(None , text="Back",fg="Black",  width=10, height=1)
+        backButton.place(x=207,y=330)
 
-#     else:
-#         persoTitle  = canvas.create_text(245,100,text="Personalizar",font=("Comic Sans MS",20), fill ='Black')
+    else:
+        persoTitle  = canvas.create_text(250,100,text="Personalizar",font=("Comic Sans MS",20), fill ='Black')
 
-#         ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1)
-#         ballButton.place(x=207,y=250)
+        ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1)
+        ballButton.place(x=207,y=250)
 
-#         paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1)
-#         paddleButton.place(x=207,y=370)
+        paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1)
+        paddleButton.place(x=207,y=290)
 
-#         backButton = Button(None , text="Voltar",fg="Black",  width=10, height=1)
-#         backButton.place(x=207,y=420)
+        backButton = Button(None , text="Voltar",fg="Black",  width=10, height=1)
+        backButton.place(x=207,y=330) 
     
     
-#     ballButton.bind("<Button-1>", colorBall)  
-#     paddleButton.bind("<Button-1>", colorPaddle)
-#     backButton.bind("<Button-1>", menu)  
-
+    ballButton.bind("<Button-1>", colorBall)  
+    paddleButton.bind("<Button-1>", colorPaddle)
+    backButton.bind("<Button-1>", menu)  # if perso = True to del
+    objpersoFunction = [ballButton,paddleButton,backButton,persoButton]
     
-# def colorBall(event):
-#     print("Color")
-# def colorPaddle(event):
-#     print("Paddle")
+def colorBall(event):
 
+    global b
+    global colors
+    global choiceBall
+    global ball
+    global paddle
+    global objcolorBall
+    global ballTitle
+    global inperso
+    global choosingBall
+    global choicePaddle
+
+    inperso = True
+    choiceBall = False
+    choosingBall = True
+
+    for i in objpersoFunction:
+        i.destroy()
+    
+    canvas.delete("all")
+    if en == True:
+        ballTitle = canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
+    else:
+        ballTitle = canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
+    colors = ["Black","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal"]
+
+    buttonleft = Button(None , text="<-",fg="Black",  width=5, height=2)
+    buttonleft.place(x=2,y=250)
+    buttonleft.bind("<Button-1>", left)
+
+    buttonright = Button(None , text="->",fg="Black",  width=5, height=2)
+    buttonright.place(x=458,y=250)
+    buttonright.bind("<Button-1>", right)
+
+    if en == True:
+        selectButton = Button(None , text="Select",fg="Black",  width=5, height=2)
+        selectButton.place(x=227,y=400)
+    else:
+        selectButton = Button(None , text="Selecionar",fg="Black",  width=8, height=2)
+        selectButton.place(x=215,y=400)
+    selectButton.bind("<Button-1>", selectBall) 
+    b=0
+
+    if choicePaddle == True:
+        paddle = Paddles(canvas,colors[p])
+    else: 
+        paddle = Paddles(canvas,"Cyan")
+
+    ball = Ball(canvas,paddle,colors[b])
+    objcolorBall = [selectButton,buttonright,buttonleft]
+
+    while choiceBall == False:
+        ball.draw()
+        tk.update_idletasks()
+        tk.update()            
+        time.sleep(0.01)
+
+def colorPaddle(event):
+
+    global p
+    global colors
+    global choicePaddle
+    global ball
+    global paddle
+    global objcolorPaddle
+    global ballTitle
+    global inperso
+    global choosingPaddle
+
+    inperso = True
+    choosingPaddle = True
+    choicePaddle = False
+
+    for i in objpersoFunction:
+        i.destroy()
+    
+    canvas.delete("all")
+    if en == True:
+        canvas.create_text(250,100,text="Change Paddle Color",font=("Comic Sans MS",20), fill ='Black')
+    else:
+        canvas.create_text(250,100,text="Mudar Cor do Paddle",font=("Comic Sans MS",20), fill ='Black')
+    colors = ["Cyan","Black","Orange","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal"]
+
+    buttonleft = Button(None , text="<-",fg="Black",  width=5, height=2)
+    buttonleft.place(x=2,y=250)
+    buttonleft.bind("<Button-1>", left)
+
+    buttonright = Button(None , text="->",fg="Black",  width=5, height=2)
+    buttonright.place(x=458,y=250)
+    buttonright.bind("<Button-1>", right)
+
+    if en == True:
+        selectButton = Button(None , text="Select",fg="Black",  width=5, height=2)
+        selectButton.place(x=227,y=400)
+    else:
+        selectButton = Button(None , text="Selecionar",fg="Black",  width=8, height=2)
+        selectButton.place(x=215,y=400)
+    selectButton.bind("<Button-1>", selectPaddle) 
+    p=0
+    paddle = Paddles(canvas,"Cyan")
+    if choiceBall == True:
+        ball = Ball(canvas,paddle,colors[b])
+    else: 
+        ball = Ball(canvas,paddle,"Black")
+    objcolorPaddle = [selectButton,buttonright,buttonleft]
+
+    while choicePaddle == False:
+        ball.draw()
+        paddle.draw()
+        tk.update()  
+        tk.update_idletasks()
+        tk.update()           
+        time.sleep(0.01)
+
+def right(event):
+
+    global ball
+    global paddle
+    global b
+    global p
+
+    canvas.delete("all")
+
+    if choosingPaddle == True:
+
+        canvas.delete("all")
+        if en == True:
+            canvas.create_text(250,100,text="Change Paddle Color",font=("Comic Sans MS",20), fill ='Black')
+        else:
+            canvas.create_text(250,100,text="Mudar Cor do Paddle",font=("Comic Sans MS",20), fill ='Black')
+        
+        paddle = Paddles(canvas,colors[p])
+
+        if choiceBall == True:
+            ball = Ball(canvas,paddle,colors[b])
+        else: 
+            ball = Ball(canvas,paddle,"Black")  
+        tk.update_idletasks()
+        tk.update()
+        
+        p = p + 1
+        if p >= len(colors):
+            p = 0  
+        paddle = Paddles(canvas,colors[p])
+        
+
+    elif choosingBall == True and choicePaddle == True:
+
+        canvas.delete("all")
+        if en == True:
+            canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
+        else:
+            canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
+
+        paddle = Paddles(canvas,colors[p])
+
+        # if choiceBall == True:
+        #     ball = Ball(canvas,paddle,colors[b])
+        # else: 
+        #     ball = Ball(canvas,paddle,"Black") 
+        
+        tk.update_idletasks()
+        tk.update()
+        
+        b = b + 1
+        if b >= len(colors):
+            b = 0  
+        ball = Ball(canvas,paddle,colors[b])
+
+    else: # choosingBall == True:
+
+        canvas.delete("all")
+        if en == True:
+            canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
+        else:
+            canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
+
+        paddle = Paddles(canvas,"Cyan")  
+
+        # if choiceBall == True:
+        #     ball = Ball(canvas,paddle,colors[b])
+        # else: 
+        #     ball = Ball(canvas,paddle,"Black") 
+        
+        tk.update_idletasks()
+        tk.update()
+        
+        b = b + 1
+        if b >= len(colors):
+            b = 0  
+        ball = Ball(canvas,paddle,colors[b])
+    
+def left(event):
+    
+    global ball
+    global paddle
+    global b
+    global p
+
+    canvas.delete("all")
+
+    if choosingPaddle == True:
+
+        if en == True:
+            canvas.create_text(250,100,text="Change Paddle Color",font=("Comic Sans MS",20), fill ='Black')
+        else:
+            canvas.create_text(250,100,text="Mudar Cor do Paddle",font=("Comic Sans MS",20), fill ='Black')
+        paddle = Paddles(canvas,"Cyan")
+
+        paddle = Paddles(canvas,colors[p])
+
+        if choiceBall == True:
+            ball = Ball(canvas,paddle,colors[b])
+        else: 
+            ball = Ball(canvas,paddle,"Black")  
+        tk.update_idletasks()
+        tk.update()
+        
+        p = p - 1
+        if p < 0:
+            p = 0  
+        
+
+    elif choosingBall == True and choicePaddle == True:
+
+        if en == True:
+            canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
+        else:
+            canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
+
+        paddle = Paddles(canvas,colors[p])
+
+        if choiceBall == True:
+            ball = Ball(canvas,paddle,colors[b])
+        else: 
+            ball = Ball(canvas,paddle,"Black") 
+        
+        tk.update_idletasks()
+        tk.update()
+        
+        b = b - 1
+        if b < 0:
+            b = 0  
+        ball = Ball(canvas,paddle,colors[b])
+
+    else: # choosingBall == True:
+
+        if en == True:
+            canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
+        else:
+            canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
+
+        paddle = Paddles(canvas,"Cyan")  
+
+        if choiceBall == True:
+            ball = Ball(canvas,paddle,colors[b])
+        else: 
+            ball = Ball(canvas,paddle,"Black") 
+        tk.update_idletasks()
+        tk.update()
+        
+        b = b - 1
+        if b < 0 :
+            b = 0  
+        ball = Ball(canvas,paddle,colors[b])
+
+def selectBall(event):
+
+    global choiceBall
+    global objcolorBall
+    global inperso
+    global choosingBall
+    canvas.delete("all")  
+    for i in objcolorBall:
+        i.destroy()
+    choiceBall = True
+    inperso = False
+    choosingBall = False
+    persoFunction(b)
+
+def selectPaddle(event):
+
+    global choicePaddle
+    global objcolorPaddle
+    global inperso
+    global choosingPaddle
+    canvas.delete("all")  
+    for i in objcolorPaddle:
+        i.destroy()
+    choicePaddle = True
+    inperso = False
+    choosingPaddle = False
+    persoFunction(p)
+
+p = 0
+choosingPaddle = False
+b = 0
+choosingBall = False
+choiceBall = False
+choicePaddle = False
+perso = False
+inperso = False
 start = intro()
 menu(start)
