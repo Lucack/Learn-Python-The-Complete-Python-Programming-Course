@@ -7,9 +7,9 @@ class Ball:
 
     def __init__(self,canvas,paddle,color):
         self.canvas=canvas
-        global colors
+        global colorsb
         if choiceBall == True:
-            self.id = canvas.create_oval(10,10,25,25,fill=colors[b])
+            self.id = canvas.create_oval(10,10,25,25,fill=colorsb[b])
         else:
             self.id = canvas.create_oval(10,10,25,25,fill=color)
         self.canvas.move(self.id,245,100)
@@ -59,7 +59,7 @@ class Ball:
                     recordText= 'Seu Recorde: ' + str(max(record))
             
                 canvas.create_text(250,150, text = score, font = ("Comic Sans MS",20) , fill = 'Black') 
-                canvas.create_text(250,490, text = recordText, font = ("Comic Sans MS",10) , fill = 'Black') 
+                canvas.create_text(250,470, text = recordText, font = ("Comic Sans MS",10) , fill = 'Black') 
         pos = self.canvas.coords(self.id)
         if pos[0] <= 0:
             self.x = 3
@@ -73,7 +73,7 @@ class Paddles:
         def __init__(self,canvas,color):
             self.canvas = canvas
             if choicePaddle == True:
-                self.id = canvas.create_rectangle(0,0,100,10,fill=colors[p])
+                self.id = canvas.create_rectangle(0,0,100,10,fill=colorsp[p])
             else:
                 self.id = canvas.create_rectangle(0,0,100,10,fill=color)
             self.canvas.move(self.id, 200, 350)
@@ -125,12 +125,12 @@ def game(event):
     points = 0
 
     if choicePaddle == True:
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
     else:
         paddle = Paddles(canvas,"Cyan")
 
     if choiceBall == True:
-        ball = Ball(canvas,paddle,colors[b])
+        ball = Ball(canvas,paddle,colorsb[b])
     else:
         ball = Ball(canvas,paddle,'Black')
 
@@ -391,7 +391,7 @@ def persoFunction(event):
 def colorBall(event):
 
     global b
-    global colors
+    global colorsb
     global choiceBall
     global ball
     global paddle
@@ -413,7 +413,7 @@ def colorBall(event):
         ballTitle = canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
     else:
         ballTitle = canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
-    colors = ["Black","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal"]
+    colorsb = ["Black","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal"]
 
     buttonleft = Button(None , text="<-",fg="Black",  width=5, height=2)
     buttonleft.place(x=2,y=250)
@@ -433,11 +433,11 @@ def colorBall(event):
     b=0
 
     if choicePaddle == True:
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
     else: 
         paddle = Paddles(canvas,"Cyan")
 
-    ball = Ball(canvas,paddle,colors[b])
+    ball = Ball(canvas,paddle,colorsb[b])
     objcolorBall = [selectButton,buttonright,buttonleft]
 
     while choiceBall == False:
@@ -449,7 +449,7 @@ def colorBall(event):
 def colorPaddle(event):
 
     global p
-    global colors
+    global colorsp
     global choicePaddle
     global ball
     global paddle
@@ -470,7 +470,7 @@ def colorPaddle(event):
         canvas.create_text(250,100,text="Change Paddle Color",font=("Comic Sans MS",20), fill ='Black')
     else:
         canvas.create_text(250,100,text="Mudar Cor do Paddle",font=("Comic Sans MS",20), fill ='Black')
-    colors = ["Cyan","Black","Orange","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal"]
+    colorsp = ["Cyan","Black","Orange","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal"]
 
     buttonleft = Button(None , text="<-",fg="Black",  width=5, height=2)
     buttonleft.place(x=2,y=250)
@@ -487,10 +487,10 @@ def colorPaddle(event):
         selectButton = Button(None , text="Selecionar",fg="Black",  width=8, height=2)
         selectButton.place(x=215,y=400)
     selectButton.bind("<Button-1>", selectPaddle) 
-    p = 0
+
     paddle = Paddles(canvas,"Cyan")
     if choiceBall == True:
-        ball = Ball(canvas,paddle,colors[b])
+        ball = Ball(canvas,paddle,colorsb[b])
     else: 
         ball = Ball(canvas,paddle,"Black")
     objcolorPaddle = [selectButton,buttonright,buttonleft]
@@ -512,37 +512,37 @@ def right(event):
 
     canvas.delete("all")
 
-    if choosingPaddle == True:
+    if choosingPaddle == True: #
         canvas.delete("all")
         if en == True:
             canvas.create_text(250,100,text="Change Paddle Color",font=("Comic Sans MS",20), fill ='Black')
         else:
             canvas.create_text(250,100,text="Mudar Cor do Paddle",font=("Comic Sans MS",20), fill ='Black')
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
         if choiceBall == True:
-            ball = Ball(canvas,paddle,colors[b])
+            ball = Ball(canvas,paddle,colorsb[b])
         else: 
             ball = Ball(canvas,paddle,"Black")  
         tk.update_idletasks()
         tk.update()
         p = p + 1
-        if p >= len(colors):
+        if p >= len(colorsp):
             p = 0  
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
         
-    elif choosingBall == True and choicePaddle == True:
+    elif choosingBall == True and choicePaddle == True: #
         canvas.delete("all")
         if en == True:
             canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
         else:
             canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
         tk.update_idletasks()
         tk.update()
         b = b + 1
-        if b >= len(colors):
+        if b >= len(colorsb):
             b = 0  
-        ball = Ball(canvas,paddle,colors[b])
+        ball = Ball(canvas,paddle,colorsb[b])
 
     else: # choosingBall == True:
 
@@ -556,9 +556,9 @@ def right(event):
         tk.update()
         
         b = b + 1
-        if b >= len(colors):
+        if b >= len(colorsb):
             b = 0  
-        ball = Ball(canvas,paddle,colors[b])
+        ball = Ball(canvas,paddle,colorsb[b])
     
 def left(event):
     
@@ -575,31 +575,31 @@ def left(event):
         else:
             canvas.create_text(250,100,text="Mudar Cor do Paddle",font=("Comic Sans MS",20), fill ='Black')
         paddle = Paddles(canvas,"Cyan")
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
         if choiceBall == True:
-            ball = Ball(canvas,paddle,colors[b])
+            ball = Ball(canvas,paddle,colorsb[b])
         else: 
             ball = Ball(canvas,paddle,"Black")  
         tk.update_idletasks()
         tk.update()
         p = p - 1
         if p < 0:
-            p = len(colors)-1
-        paddle = Paddles(canvas,colors[p])  
+            p = len(colorsp)-1
+        paddle = Paddles(canvas,colorsp[p])  
         
     elif choosingBall == True and choicePaddle == True:
         if en == True:
             canvas.create_text(250,100,text="Change Ball Color",font=("Comic Sans MS",20), fill ='Black')
         else:
             canvas.create_text(250,100,text="Mudar Cor da Bola",font=("Comic Sans MS",20), fill ='Black')
-        paddle = Paddles(canvas,colors[p])
+        paddle = Paddles(canvas,colorsp[p])
 
         tk.update_idletasks()
         tk.update()
         b = b - 1
         if b < 0:
-            b = len(colors)-1
-        ball = Ball(canvas,paddle,colors[b])
+            b = len(colorsb)-1
+        ball = Ball(canvas,paddle,colorsb[b])
 
     else: # choosingBall == True:
         if en == True:
@@ -612,8 +612,8 @@ def left(event):
         tk.update()
         b = b - 1
         if b < 0 :
-            b = len(colors)-1  
-        ball = Ball(canvas,paddle,colors[b])
+            b = len(colorsb)-1  
+        ball = Ball(canvas,paddle,colorsb[b])
 
 def selectBall(event):
 
