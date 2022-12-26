@@ -14,7 +14,7 @@ class Ball:
             self.id = canvas.create_oval(10,10,25,25,fill=color)
         self.canvas.move(self.id,245,100)
             #bounce back:
-        start = [-3,-2,1,-1,2,3]
+        start = [-4,-3,-2,1,-1,2,3,4]
         random.shuffle(start)
         self.x = start[0]
         self.y = -3
@@ -67,6 +67,32 @@ class Ball:
             self.x = -3
         if self.hit_paddle(pos)==True:
             self.y = -3
+
+class BallTest:
+    def __init__(self,canvas,color):
+        self.canvas=canvas
+        if choiceBall == True:
+            self.id = canvas.create_oval(10,10,30,30,fill=colorsb[b])
+        else:
+            self.id = canvas.create_oval(10,10,30,30,fill=color)
+        startx = [200,100,150,50,250,300,350,400,450]
+        starty = [200,100,150,50,250,300,350,400,450]
+        self.canvas.move(self.id,random.choice(startx),random.choice(starty))
+        start = [-3,-2,1,-1,2,3]
+        self.x = random.choice(start)
+        self.y = random.choice(start)
+    
+    def drawTest(self):
+        self.canvas.move(self.id,self.x,self.y)
+        pos = self.canvas.coords(self.id)
+        if pos[1] <= 3:
+            self.y = 3
+        if pos[3] >= 497:
+            self.y = -3
+        if pos[0] <= 3:
+            self.x = 3
+        if pos[2] >= 497:
+            self.x = -3
 
 class Paddles:
 
@@ -123,7 +149,7 @@ def game(event):
     languageButton.destroy()
     persoButton.destroy()
     points = 0
-
+    
     if choicePaddle == True:
         paddle = Paddles(canvas,colorsp[p])
     else:
@@ -135,8 +161,11 @@ def game(event):
         ball = Ball(canvas,paddle,'Black')
 
     while True:
-
-        if ball.hit_bottom==True:
+        try:
+            canvas.keys()
+        except:
+            break
+        if ball.hit_bottom == True:
             count += 1
             if restart == False or menuevent == True:
                 if en == True:
@@ -155,18 +184,21 @@ def game(event):
             try:
                 restartGame.bind("<Button-1>", restartFunction)
             except:
-                None       
-            toMenu.bind("<Button-1>", backMenu)
+                None
+            try:       
+                toMenu.bind("<Button-1>", backMenu)
+            except:
+                None
             tk.update()
             menuevent = False      
             break
-        else:          
+        else:        
             ball.draw()
             paddle.draw()
             tk.update_idletasks()
             tk.update()            
             time.sleep(0.01)
-        
+    tk.mainloop()        
     return points, menu
 
 def menu(event):
@@ -180,7 +212,18 @@ def menu(event):
     global languageButton
     global persoButton
     global perso
-    
+    global press
+    global pressStart
+    global pressRestart
+    global pressLanguage
+    global pressPerso
+
+    press = False
+    pressStart = False
+    pressRestart = False
+    pressLanguage = False
+    pressPerso = False
+
     if perso == True:
         canvas.delete("all")
         for i in objpersoFunction:
@@ -200,41 +243,80 @@ def menu(event):
         restartGame.destroy()
         if en == True: 
             canvas.create_text(250,100,text="Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
-            restartGame = Button(None , text="Restart Game",fg="Black")
+            # restartGame = Button(None , text="Restart Game",fg="Black")
+            restartGame = Button(None , text="Restart Game",fg="Black",command=lambda:pressButton(count,1))
             restartGame.place(x=210,y=260)
         else:
             canvas.create_text(250,130,text="Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
-            restartGame = Button(None , text="Reiniciar o Jogo",fg="Black")
+            # restartGame = Button(None , text="Reiniciar o Jogo",fg="Black")
+            restartGame = Button(None , text="Reiniciar o Jogo",fg="Black",command=lambda:pressButton(count,1))
             restartGame.place(x=202,y=260)
         
-        restartGame.bind("<Button-1>", restartFunction)
-        
+        # restartGame.bind("<Button-1>", lambda:pressButton(count,1))
     else:
         if en == True:
             canvas.create_text(250,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
-            startGame = Button(None , text="Start Game",fg="Black",  width=10, height=1)
+            startGame = Button(None , text="Start Game",fg="Black",  width=10, height=1,command=lambda:pressButton(count,2))
+            # startGame = Button(None , text="Start Game",fg="Black",  width=10, height=1)
         else:
             canvas.create_text(250,130,text="Bem vindo ao Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
-            startGame = Button(None , text="Iniciar o Jogo",fg="Black",  width=10, height=1)
-        # startGame.pack(side=BOTTOM)
+            startGame = Button(None , text="Iniciar o Jogo",fg="Black",  width=10, height=1,command=lambda:pressButton(count,2))
+            # startGame = Button(None , text="Iniciar o Jogo",fg="Black",  width=10, height=1)
+        
+        startGame.pack(side=BOTTOM)
         startGame.place(x=208,y=250)
         
-        startGame.bind("<Button-1>", game)
+        # startGame.bind("<Button-1>", lambda:pressButton(count,2))
     if en == True:
-        languageButton = Button(None , text="Change Language",fg="Black")
+        # languageButton = Button(None , text="Change Language",fg="Black")
+        languageButton = Button(None , text="Change Language",fg="Black",command=lambda:pressButton(count,3))
         languageButton.place(x=194,y=290)
-        persoButton = Button(None , text=" Personalize ",fg="Black",  width=10, height=1)
+        # persoButton = Button(None , text=" Personalize ",fg="Black",  width=10, height=1)
+        persoButton = Button(None , text=" Personalize ",fg="Black",  width=10, height=1,command=lambda:pressButton(count,4))
         persoButton.place(x=208,y=330)
     else:
-        languageButton = Button(None , text=" Trocar Idioma ",fg="Black")
+        # languageButton = Button(None , text=" Trocar Idioma ",fg="Black")
+        languageButton = Button(None , text=" Trocar Idioma ",fg="Black",command=lambda:pressButton(count,3))
         languageButton.place(x=202,y=290)
-        persoButton = Button(None , text="Personalizar",fg="Black",  width=10, height=1)
+        # persoButton = Button(None , text="Personalizar",fg="Black",  width=10, height=1)
+        persoButton = Button(None , text="Personalizar",fg="Black",  width=10, height=1,command=lambda:pressButton(count,4))
         persoButton.place(x=207,y=330)
-    persoButton.bind("<Button-1>", persoFunction)
-    languageButton.bind("<Button-1>", changeLanguage)
-
-    tk.mainloop()
-
+    # persoButton.bind("<Button-1>", lambda:pressButton(count,4))
+    # languageButton.bind("<Button-1>", lambda:pressButton(count,3))
+    
+    createBallsTest()
+    
+    while True:
+        try:
+            canvas.keys()
+        except:
+            break
+        if press == True:
+            if menuevent == True or count > 0:
+                if pressRestart == True:
+                    restartFunction(count)
+            if pressStart == True:
+                game(count)
+            if pressPerso == True:
+                persoFunction(count)
+            if pressLanguage == True:
+                changeLanguage(count)
+        if press == False:
+            # if menuevent == True or count > 0:
+            #     restartGame.bind("<Button-1>", pressButton(count,1))
+            # else:
+                # startGame.bind("<Button-1>", pressButton(count,2))
+            
+            # persoButton.bind("<Button-1>", pressButton(count,4))
+            # languageButton.bind("<Button-1>", pressButton(count,3))
+            try:       
+                drawBallTest()
+            except:
+                None
+            tk.update_idletasks()
+            tk.update()            
+            time.sleep(0.01)        
+        
 def restartFunction(event):
     global restart
     global restartGame
@@ -245,7 +327,10 @@ def restartFunction(event):
 def backMenu(event):
     global menuevent
     menuevent = True
-    menu(event)
+    try:
+        menu(event)
+    except:
+        None
 
 def hitSound():
     local = 'Jump_sound.wav'
@@ -260,6 +345,7 @@ def intro():
     global restart
     global en
     global pt
+    global inperso
 
     count = 0
     menuevent = False
@@ -273,20 +359,36 @@ def intro():
     tk.wm_attributes("-topmost",1) # in front of all the window
     canvas = Canvas(tk,width=500,height=500, bd=0 , highlightbackground='white')
     canvas.pack()
-    canvas.create_text(250,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black') 
+    t1=canvas.create_text(250,100,text="Welcome to the Bounce Game!",font=("Comic Sans MS",20), fill ='Black') 
     canvas.create_text(250,130,text="Bem vindo ao Bounce Game!",font=("Comic Sans MS",20), fill ='Black')
 
     canvas.create_text(250,280,text="Select Language:",font=("Comic Sans MS",10), fill ='Black')
-    canvas.create_text(250,295,text="Selecione o Idioma:",font=("Comic Sans MS",10), fill ='Black')
+    canvas.create_text(250,300,text="Selecione o Idioma:",font=("Comic Sans MS",10), fill ='Black')
     
     buttonPtbr = Button(None , text="Português-BR",fg="Black")
-    buttonPtbr.place(x=150,y=320)
+    buttonPtbr.place(x=160,y=320)
     buttonEN = Button(None , text=" English-EN  ",fg="Black")
-    buttonEN.place(x=250,y=320)
+    buttonEN.place(x=255,y=320)
+    
+    createBallsTest()
 
     while True:
-        buttonPtbr.bind("<Button-1>", Language.selectPortugues)
-        buttonEN.bind("<Button-1>", Language.selectEnglish)
+        try: 
+            canvas.keys()
+        except:
+            global stop
+            stop = 1
+            break
+        try:
+            buttonPtbr.bind("<Button-1>", Language.selectPortugues)
+        except:
+            None
+        try:
+            buttonEN.bind("<Button-1>", Language.selectEnglish)
+        except:
+            None
+        drawBallTest()
+
         if en == True or pt == True:
             intro = 1
             canvas.delete("all")
@@ -301,10 +403,9 @@ def changeLanguage(event):
 
     global en
     global pt
-    global languageButton 
-
+    global languageButton
+   
     canvas.delete("all")
-
     startGame.destroy()
     languageButton.destroy()
     persoButton.destroy()
@@ -326,9 +427,16 @@ def changeLanguage(event):
     buttonEN = Button(None , text=" English-EN  ",fg="Black")
     buttonEN.place(x=250,y=320)
 
+    createBallsTest()
+
     while True:
+        try:
+            canvas.keys()
+        except:
+            break
         buttonPtbr.bind("<Button-1>", Language.selectPortugues)
         buttonEN.bind("<Button-1>", Language.selectEnglish)
+        drawBallTest()
         if en == True or pt == True:
             canvas.delete("all")
             buttonPtbr.destroy()
@@ -347,6 +455,11 @@ def persoFunction(event):
     global perso
     global inperso
     global objpersoFunction
+    global press
+    global pressBall
+    global pressPaddle
+    global pressBack
+
 
     canvas.delete("all")
     startGame.destroy()
@@ -354,39 +467,68 @@ def persoFunction(event):
     languageButton.destroy()
     perso = True
     inperso = False
-
+    press = False
+    pressBall = False
+    pressPaddle = False
+    pressBack = False
     if menuevent==True:
         restartGame.destroy()
 
     if en == True:
         persoTitle = canvas.create_text(250,100,text="Personalize",font=("Comic Sans MS",20), fill ='Black')
 
-        ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1)
+        ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1,command=lambda:pressButton(count,"ball"))
         ballButton.place(x=207,y=250)
 
-        paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1)
+        paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1,command=lambda:pressButton(count,"paddle"))
         paddleButton.place(x=207,y=290)
 
-        backButton = Button(None , text="Back",fg="Black",  width=10, height=1)
+        backButton = Button(None , text="Back",fg="Black",  width=10, height=1,command=lambda:pressButton(count,"back"))
         backButton.place(x=207,y=330)
 
     else:
         persoTitle  = canvas.create_text(250,100,text="Personalizar",font=("Comic Sans MS",20), fill ='Black')
 
-        ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1)
+        ballButton = Button(None , text="Ball Color",fg="Black",  width=10, height=1,command=lambda:pressButton(count,"ball"))
         ballButton.place(x=207,y=250)
 
-        paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1)
+        paddleButton = Button(None , text="Paddle Color",fg="Black",  width=10, height=1,command=lambda:pressButton(count,"paddle"))
         paddleButton.place(x=207,y=290)
 
-        backButton = Button(None , text="Voltar",fg="Black",  width=10, height=1)
+        backButton = Button(None , text="Voltar",fg="Black",  width=10, height=1,command=lambda:pressButton(count,"back"))
         backButton.place(x=207,y=330) 
-    
-    
-    ballButton.bind("<Button-1>", colorBall)  
-    paddleButton.bind("<Button-1>", colorPaddle)
-    backButton.bind("<Button-1>", menu)  # if perso = True to del
+
+    createBallsTest()
     objpersoFunction = [ballButton,paddleButton,backButton,persoButton]
+    
+    while True:
+        try:
+            canvas.keys()
+        except:
+            break
+        if press == True:
+            if pressBall == True:
+                colorBall(count)
+            if pressPaddle == True:
+                colorPaddle(count)
+            if pressBack ==  True:
+                menu(count)
+        if press == False:
+            try:       
+                drawBallTest()
+            except:
+                None
+            tk.update_idletasks()
+            tk.update()            
+            time.sleep(0.01)
+
+    # global pressPaddle
+    # global pressBack
+    # ballButton.bind("<Button-1>", colorBall)  
+    # paddleButton.bind("<Button-1>", colorPaddle)
+    # backButton.bind("<Button-1>", menu)  # if perso = True to del
+    
+    # tk.mainloop()
     
 def colorBall(event):
 
@@ -441,6 +583,10 @@ def colorBall(event):
     objcolorBall = [selectButton,buttonright,buttonleft]
 
     while choiceBall == False:
+        try:
+            canvas.keys()
+        except:
+            break
         ball.draw()
         tk.update_idletasks()
         tk.update()            
@@ -496,6 +642,10 @@ def colorPaddle(event):
     objcolorPaddle = [selectButton,buttonright,buttonleft]
 
     while choicePaddle == False:
+        try:
+            canvas.keys()
+        except:
+            break
         ball.draw()
         paddle.draw()
         tk.update()  
@@ -643,6 +793,114 @@ def selectPaddle(event):
     choosingPaddle = False
     persoFunction(p)
 
+def createBallsTest():    
+    colorsb = ["Black","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal","Lime"]
+    c1 = random.choice(colorsb)
+    colorsb.remove(c1)
+    global balltest1
+    balltest1 = BallTest(canvas,c1)
+    c2 = random.choice(colorsb)
+    colorsb.remove(c2)
+    global balltest2
+    balltest2 = BallTest(canvas,c2)
+    c3 = random.choice(colorsb)
+    colorsb.remove(c3)
+    global balltest3
+    balltest3 = BallTest(canvas,c3)
+    c4 = random.choice(colorsb)
+    colorsb.remove(c4)
+    global balltest4
+    balltest4 = BallTest(canvas,c4)
+    c5 = random.choice(colorsb)
+    colorsb.remove(c5)
+    global balltest5
+    balltest5 = BallTest(canvas,c5)
+    c6 = random.choice(colorsb)
+    colorsb.remove(c6)
+    global balltest6
+    balltest6 = BallTest(canvas,c6)
+    c7 = random.choice(colorsb)
+    colorsb.remove(c7)
+    global balltest7
+    balltest7 = BallTest(canvas,c7)
+    c8 = random.choice(colorsb)
+    colorsb.remove(c8)
+    global balltest8
+    balltest8 = BallTest(canvas,c8)
+    c9 = random.choice(colorsb)
+    colorsb.remove(c9)
+    global balltest9
+    balltest9 = BallTest(canvas,c9)
+    c10 = random.choice(colorsb)
+    colorsb.remove(c10)
+    global balltest10
+    balltest10 = BallTest(canvas,c10)
+    c11 = random.choice(colorsb)
+    colorsb.remove(c11)
+    global balltest11
+    balltest11 = BallTest(canvas,c11)
+    c12 = random.choice(colorsb)
+    colorsb.remove(c12)
+    global balltest12
+    balltest12 = BallTest(canvas,c12)
+    c13 = random.choice(colorsb)
+    colorsb.remove(c13)
+    global balltest13
+    balltest13 = BallTest(canvas,c13)
+    c14 = random.choice(colorsb)
+    colorsb.remove(c14)
+    global balltest14
+    balltest14 = BallTest(canvas,c14)
+    c15 = random.choice(colorsb)
+    colorsb.remove(c15)
+    global balltest15
+    balltest15 = BallTest(canvas,c15)
+
+def drawBallTest():
+    balltest1.drawTest()
+    balltest2.drawTest()
+    balltest3.drawTest()
+    balltest4.drawTest()
+    balltest5.drawTest()
+    balltest6.drawTest()
+    balltest7.drawTest()
+    balltest8.drawTest()
+    balltest9.drawTest()
+    balltest10.drawTest()
+    balltest11.drawTest()
+    balltest12.drawTest()
+    balltest13.drawTest()
+    balltest14.drawTest()
+    balltest15.drawTest()
+    tk.update_idletasks()
+    tk.update()
+
+def pressButton(event,button):
+    global press
+    global pressStart
+    global pressRestart
+    global pressLanguage
+    global pressPerso
+    global pressBall
+    global pressPaddle
+    global pressBack
+
+    if button == 1:
+        pressRestart = True
+    if button == 2:
+        pressStart = True
+    if button == 3:
+        pressLanguage = True
+    if button == 4:
+        pressPerso = True
+    if button == "ball":
+        pressBall = True
+    if button == "paddle":
+        pressPaddle = True
+    if button == "back":
+        pressBack = True
+    press = True
+
 p = 0
 choosingPaddle = False
 b = 0
@@ -651,5 +909,11 @@ choiceBall = False
 choicePaddle = False
 perso = False
 inperso = False
-start = intro()
-menu(start)
+stop = 0
+intro()
+if stop != 1:
+    menu(p)
+    # try:
+    #     menu(p)
+    # except:
+    #     None
