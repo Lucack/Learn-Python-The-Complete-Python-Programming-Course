@@ -51,6 +51,12 @@ class Ball:
                 self.y = -3
             else:
                 self.hit_bottom = True
+                
+                if darkTheme == True:
+                    colorText = 'White'
+                else:
+                    colorText = 'Black'
+
                 if en == True:
                     canvas.create_text(250,100,text="Game Over!",font=("Comic Sans MS",30),  fill = colorText)
                     score = 'Your Score: ' + str(points)
@@ -62,8 +68,8 @@ class Ball:
                     record.append(points)
                     recordText= 'Seu Recorde: ' + str(max(record))
             
-                canvas.create_text(250,150, text = score, font = ("Comic Sans MS",20) , fill = 'Black') 
-                canvas.create_text(250,470, text = recordText, font = ("Comic Sans MS",10) , fill = 'Black') 
+                canvas.create_text(250,150, text = score, font = ("Comic Sans MS",20) , fill = colorText) 
+                canvas.create_text(250,470, text = recordText, font = ("Comic Sans MS",10) , fill = colorText) 
         pos = self.canvas.coords(self.id)
         if pos[0] <= 0:
             self.x = 3
