@@ -13,9 +13,9 @@ class Ball:
         else:
             colorsb = ["Black","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal","SystemButtonFace","Light green","Light gray","Violet"]
         if choiceBall == True:
-            self.id = canvas.create_oval(10,10,25,25,fill=colorsb[b])
+            self.id = canvas.create_oval(10,10,26,26,fill=colorsb[b])
         else:
-            self.id = canvas.create_oval(10,10,25,25,fill=color)
+            self.id = canvas.create_oval(10,10,26,26,fill=color)
         self.canvas.move(self.id,245,100)
             #bounce back:
         start = [-4,-3,-2,1,-1,2,3,4]
@@ -75,6 +75,11 @@ class Ball:
 class BallTest:
     def __init__(self,canvas,color):
         self.canvas=canvas
+        global colorsb
+        if darkTheme == True:
+            colorsb = ["White","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal","SystemButtonFace","Light green","Light gray","Violet"]
+        else:
+            colorsb = ["Black","Orange","Cyan","Purple","Yellow","Green","Red","Magenta","Blue","Grey","Pink","Turquoise","Lime","Teal","SystemButtonFace","Light green","Light gray","Violet"]
         if choiceBall == True:
             self.id = canvas.create_oval(10,10,30,30,fill=colorsb[b])
         else:
