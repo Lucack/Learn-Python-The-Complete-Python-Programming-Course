@@ -1,3 +1,9 @@
+pyinstaller:
+
 python -m PyInstaller --onefile -w Bounce_Game.py
+
 or
-cxfreeze
+
+cxfreeze:
+
+python setup.py build
